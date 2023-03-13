@@ -10,19 +10,23 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            // Задача 1.Заполнить одномерный массив с клавиатуры шестью целыми числами.Вывести одномерный массив в обратном порядке.
+            //Задача 2. В массиве хранятся сведения о количестве осадков, выпавших за каждый день января (использовать заполнение случайным образом целыми числами в диапазоне от 5 до 60 мм). Определить общее количество осадков за январь.
 
-            int[] array = new int[6];
+            int[] array = new int[31];
+            Random random = new Random();
+            for (int i = 0 ; i < array.Length ; i++)
+            {
+                array[i] = random.Next(5, 60);
+                Console.WriteLine($"array[{i}] = {array[i]}");
+            }
+            int sum = 0;
             for (int i = 0; i < array.Length; i++)
             {
-                Console.Write($"array[{i}]= ");
-                array[i] = int.Parse(Console.ReadLine());
+                sum += array[i];
+            
             }
-            for (int i = array.Length - 1; i >= 0; i--)
-            {
-                Console.WriteLine($"array[{i}]= {array[i]}");
-            }
-            Console.Read();
+            Console.WriteLine($"общее кол-ыо очвдуоы = {sum}");
+                Console.Read();
         }
     }
 }
